@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+resources :contacts do
+
+	get 'new'
+	post 'create'
+end
+
+
   get 'home/index'
   
   resources :articles
