@@ -1,26 +1,19 @@
 <p>Find me in app/views/contacts/contacts.html.erb</p>
 <h1>Contact Us</h1>
 
-<form id="contact form" action="/contacts" method="POST" role="form">
-
-	<div class="form-group">
-		<label>Your name:</label>
-		<input name="contact[name]" type="text" class="form-control" value="" placeholder="John Smith">
-	</div>
-
-	<div class="form-group">
-		<label>Your e-mail:</label>
-		<input name="contact[email]" type="text" class="form-control" value="" placeholder="john_smith@johnsmith.org">
-	</div>
-
-	<div class="form-group">
-		<label>Your Message:</label>
-		<textarea name="contact[message]" class="form-control" rows="2" placeholder="Your Message"></textarea>
-	</div>
-
-<div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="o+wABbhr6QqobCKCp51pkJ2ELGBN0ZYd4MLZN/raJFk=" /></div>
-
-	<button type="submit" class="btn btn-primary">Add Contact!</button>
+<%=form_for :contact, url: contacts_path do |f|%>
+	<p>
+		<%=f.label :email%></br>
+		<%=f.text_field :email%>
+	</p>	
+	<p>
+		<%=f.label :message%></br>
+		<%=f.text_area :message%>
+	</p>
+	<p>
+		<%=f.submit%></br>
+	</p>
+<%end%>
 
 </form>
 
