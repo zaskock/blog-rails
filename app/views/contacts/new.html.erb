@@ -2,16 +2,21 @@
 <h1>Contact Us</h1>
 
 <%=form_for :contact, url: contacts_path do |f|%>
+	<%if @contact && @contact.errors.any?%>
+		<p>
+			<%=@contact.errors.full_messages%>
+		</p>
+	<%end%>
 	<p>
 		<%=f.label :email%></br>
 		<%=f.text_field :email%>
-	</p>	
+	</p>
 	<p>
 		<%=f.label :message%></br>
 		<%=f.text_area :message%>
 	</p>
 	<p>
-		<%=f.submit%></br>
+		<%=f.submit "Send Message" %></br>
 	</p>
 <%end%>
 

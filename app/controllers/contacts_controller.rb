@@ -4,11 +4,15 @@ class ContactsController < ApplicationController
 	
 	end
 	def create
-	@contact= Contact.new(contact_params)
-	render plain: params[:contact].inspect
-	@contact.save
+		@contact= Contact.new(contact_params)
+		#render plain: params[:contact].inspect
+	
+		if @contact.valid? 
+		@contact.save 
+		else
+			render action: :new
+		end
 	end
-
 	private
 
 	def contact_params
