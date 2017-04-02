@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
 
-resources :contacts do
 
-	get 'new'
-	post 'create'
-end
+	resource :contacts, only: [:new, :create]
 
+	get 'home/index'
 
-  get 'home/index'
-  
-  resources :articles
+	resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
