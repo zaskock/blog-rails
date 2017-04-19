@@ -1,7 +1,7 @@
-<p>Find me in app/views/contacts/contacts.html.erb</p>
+<p>Find me in app/views/contact/new.html.erb</p>
 <h1>Contact Us</h1>
 
-<%=form_for :contact, url: contacts_path do |f|%>
+<%=form_for :contact, url: contact_path do |f|%>
 	<%if @contact && @contact.errors.any?%>
 
 		<p>
