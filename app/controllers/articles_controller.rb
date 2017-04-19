@@ -8,6 +8,7 @@ def create
 
 	if @article.valid?
 		@article.save
+		redirect_to @article
 	else
 		render action: 'new'
 	end
