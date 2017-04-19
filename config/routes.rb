@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
 	get 'home/index'
 
+	get 'terms' => 'pages#terms'
+	get 'about' => 'pages#about'
+
+
 	resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
